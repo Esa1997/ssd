@@ -1,38 +1,86 @@
-.App {
-  text-align: center;
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    color: #e2ecef;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+header {
+    padding: 30px;
+    background: #011627;
+    height: 110px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h1 {
+    text-align: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.sideNav {
+    width: 240px;
+    background: #011627;
+    position: absolute;
+    height: 130vh;
+    padding: 0 20px;
+    left: -100%;
+    transition: all 1s
 }
 
-.App-link {
-  color: #61dafb;
+.sideNav.active {
+    left: 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.logo {
+    width: 60px;
 }
+
+ul {
+    padding: 0;
+}
+
+ul li {
+    list-style-type: none;
+    margin: 10px 0;
+}
+
+ul li a {
+    color: #e2ecef;
+    text-decoration: none;
+    font-size: 16px;
+    display: block;
+    padding: 10px 15px;
+    border-radius: 6px;
+}
+
+ul li a:hover,
+ul li a.active {
+    background: #172b4d
+}
+
+header svg {
+    font-size: 40px;
+}
+
+.icon-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+
+  
+body {
+    background-color: #fcfcfc;
+}
+   
+input {
+    border: 0;
+}
+   
+.submitButton {
+    border: 0;
+    margin-bottom: 17px;
+}
+  
+  
+  
