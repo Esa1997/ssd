@@ -22,7 +22,6 @@ h1 {
     position: absolute;
     height: 130vh;
     padding: 0 20px;
-    left: -100%;
     transition: all 1s
 }
 

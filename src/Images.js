@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import './Images.css'
+import './Images.css';
+import axios from 'axios';
 
-class Images extends Component {
+class Images extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -18,16 +19,46 @@ class Images extends Component {
                 "https://thumbs.dreamstime.com/b/wellness-tree-logo-icon-design-template-vector-natural-127334115.jpg"
             ],
             showModal: false,
-            popImageUrl: ""
+            popImageUrl: "",
+            photosArray: []
         }
     }
+
+    componentDidMount(){
+        let access_token = "EAAsdP01K4ZBEBABDxywE3u42q7ytk4DfbopED4M1PapdPAqcOyJQT5UZCGnJNoUQMDByUtuFDAncOKXyRD25L3YDfQ5aQX9VZBufsBPrad5it3BmKyzOUNiItyqhEZCPOSjmhaeaSL5vsOhhyWweVhGNU3aHtOZBIY5GxyhC4BjHhXfYuXM2NofTWh1KZCFZBpmihH432tTVZA0Lkwl1fXsHGiXyJHlZAXlHqtnQX0Y5r9JO1GzNuF6gw";
+        let id = "982923679229219"
+        let url='https://graph.facebook.com/'+id+'?fields=photos{picture,likes.summary(true),created_time}&access_token='+access_token; //resource URI with user ID and access token
+        axios({
+            method:'get',
+            url:url
+        })
+        .then(response =>{   //received response is processed using a foreach array. to extract images
+            let arr = response.data.photos.data
+            let img=[];
+            /* reading inner arrays using foreach loop */
+            arr.forEach(element => {
+                let tempImage = {
+                    image:element.picture,
+                    likes:element.likes.summary.total_count
+                };
+                img.push(tempImage);
+            });
+            this.setState({
+                photosArray: img /* set album array current state*/
+            })
+        })
+        .catch(response=>{ /* error handling */
+            console.log(response);
+        }) 
+    }
+
     render() {
         let imageUrlArray = this.state.imageUrlArray;
-        const images = imageUrlArray.map((url, index) => {
+        const images = this.state.photosArray.map((image, index) => {
             return(
                 <img
                 className='singleImage'
-                src={url}
+                src={image.image}
                 key={index}
             />
             )
@@ -41,4 +72,5 @@ class Images extends Component {
     
   }
   
+  const images = new Images();
   export default Images;

@@ -12,12 +12,12 @@ function App() {
       <header>
         <h1>Facebook Collage Maker</h1>
         <div className='icon-row'>
-          <GiHamburgerMenu onClick={() => setShowNav(!showNav)} />
+          <GiHamburgerMenu/>
           <CgLogOff />
         </div>
       </header>
 
-      <Navbar show={showNav}/>
+      <Navbar/>
       <Images />
     </div>
   );
