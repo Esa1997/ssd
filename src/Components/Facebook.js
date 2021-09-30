@@ -1,67 +1,7 @@
-<<<<<<< HEAD
-import React, {Component} from 'react';
-import FacebookLogin from 'react-facebook-login';
-
-export default class Facebook extends Component {
-
-    
-    state = {
-        auth: false,
-        name: '',
-        
-    };
-
-    responseFacebook = response => {
-        console.log(response);
-        if(response.status !== 'unknown')
-        this.setState({
-            auth: true,
-            name: response.name,
-        });
-        
-    }
-
-    componentClicked = () => {
-        console.log('Facebook btn clicked');
-    }
-
-    render(){
-        let facebookData;
-
-        this.state.auth ?
-        facebookData = (
-                <div style={{
-                    width: '400px',
-                    margin: 'auto',
-                    background: '#f4f4f4',
-                    padding: '20px',
-                    color: '#000'
-                }}>
-                    
-                    <h2>Welcome {this.state.name}!</h2>
-                    
-                </div>
-            ) : 
-            facebookData = (<FacebookLogin
-                appId="589497852187892"
-                autoLoad={true}
-                fields="name,picture"
-                onClick={this.componentClicked}
-                callback={this.responseFacebook} />);
-
-        return (
-            <>
-                {facebookData}
-            </>
-        );
-    }
-}
-=======
 import React, {Component} from 'react'; 
 import FacebookLogin from 'react-facebook-login'; 
 
 export default class Facebook extends Component { 
-
 
     state = { 
         auth: false, 
@@ -69,7 +9,6 @@ export default class Facebook extends Component {
         picture: '', 
         accessToken: '' 
     }; 
-
 
     responseFacebook = response => { 
         console.log(response); 
@@ -83,11 +22,9 @@ export default class Facebook extends Component {
          
     } 
 
-
     componentClicked = () => { 
         console.log('Facebook btn clicked'); 
     } 
-
  
 
     render(){ 
@@ -110,7 +47,7 @@ export default class Facebook extends Component {
 
             facebookData = (<FacebookLogin 
                 appId="589497852187892" 
-                scope="user_photos,user_posts" 
+                scope="user_photos,user_posts,public_profile" 
                 autoLoad={true} 
                 fields="name,picture" 
                 onClick={this.componentClicked} 
@@ -125,4 +62,3 @@ export default class Facebook extends Component {
     } 
 
 } 
->>>>>>> remotes/origin/Prasadi
