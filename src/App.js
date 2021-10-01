@@ -1,14 +1,20 @@
 import React from 'react';
 import Facebook from "./Components/Facebook";
+import { GiHamburgerMenu } from 'react-icons/gi';
+import { CgLogOff } from "react-icons/cg";
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <p>
-          Facebook Authentication
-      </p>
-      <Facebook />     
+    <div >
+
+      <div>
+        <h1>Facebook Collage Maker</h1> 
+      </div>              
+  
+      <div className='fbBtn'>
+        <Facebook />
+      </div>
     </div>
   );
 }

@@ -1,8 +1,9 @@
-import logo from './logo.png';
+import logo from './logo.jpg';
 import image from './Images.js';
 import axios from 'axios';
 import React, { Component } from 'react';
 import { getDefaultNormalizer } from '@testing-library/dom';
+import './Navbar.css'
 
 class Navbar extends Component {
     constructor(props) {
@@ -90,6 +91,11 @@ class Navbar extends Component {
                 <ul>
                     <li>
                         <a href='/'>Save to Drive</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <a href='/'>Log Out</a>
                     </li>
                 </ul>
             </div>

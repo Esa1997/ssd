@@ -9,20 +9,27 @@ body {
 header {
     padding: 30px;
     background: #011627;
-    height: 110px;
+    height: 100px;
 }
 
+
 h1 {
+    padding: 30px;
+    background: #011627;
+    height: 100px;
     text-align: center;
 }
 
+
+
 .sideNav {
+    margin:none;
     width: 240px;
     background: #011627;
     position: absolute;
     height: 130vh;
     padding: 0 20px;
-    transition: all 1s
+    transition: all 1s    
 }
 
 .sideNav.active {
@@ -30,7 +37,7 @@ h1 {
 }
 
 .logo {
-    width: 60px;
+    width: 100px;
 }
 
 ul {
@@ -45,7 +52,7 @@ ul li {
 ul li a {
     color: #e2ecef;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 20px;
     display: block;
     padding: 10px 15px;
     border-radius: 6px;
@@ -61,8 +68,7 @@ header svg {
 }
 
 .icon-row {
-    display: flex;
-    justify-content: space-between;
+    float: right;
     padding: 20px;
 }
 

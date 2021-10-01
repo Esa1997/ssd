@@ -3,7 +3,10 @@
     background-color: lightgray;
     border: 1px solid #000;
     margin: 100px auto;
-    display: table;
+}
+
+.fbBtn {
+    text-align: center;
 }
 
   

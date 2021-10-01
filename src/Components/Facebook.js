@@ -1,5 +1,6 @@
 import React, {Component} from 'react'; 
-import FacebookLogin from 'react-facebook-login'; 
+import FacebookLogin from 'react-facebook-login';
+import Home from '../Home';
 
 export default class Facebook extends Component { 
 
@@ -31,27 +32,16 @@ export default class Facebook extends Component {
         let facebookData; 
         this.state.auth ? 
         facebookData = ( 
-                <div style={{ 
-                    width: '400px', 
-                    margin: 'auto', 
-                    background: '#f4f4f4', 
-                    padding: '20px', 
-                    color: '#000' 
-                }}> 
-
-                    <img src={this.state.picture} alt={this.state.name} /> 
-                    <h2>Welcome {this.state.name}!</h2> 
-                </div> 
-
+                <Home access_tkn={this.state.accessToken}/>
             ) :  
-
             facebookData = (<FacebookLogin 
-                appId="589497852187892" 
+                appId="845402736341872" 
                 scope="user_photos,user_posts,public_profile" 
                 autoLoad={true} 
                 fields="name,picture" 
                 onClick={this.componentClicked} 
-                callback={this.responseFacebook} />); 
+                callback={this.responseFacebook} />
+        ); 
 
         return ( 
             <> 

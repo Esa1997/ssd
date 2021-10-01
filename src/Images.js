@@ -25,9 +25,10 @@ class Images extends React.Component {
     }
 
     componentDidMount(){
-        let access_token = "EAAsdP01K4ZBEBABDxywE3u42q7ytk4DfbopED4M1PapdPAqcOyJQT5UZCGnJNoUQMDByUtuFDAncOKXyRD25L3YDfQ5aQX9VZBufsBPrad5it3BmKyzOUNiItyqhEZCPOSjmhaeaSL5vsOhhyWweVhGNU3aHtOZBIY5GxyhC4BjHhXfYuXM2NofTWh1KZCFZBpmihH432tTVZA0Lkwl1fXsHGiXyJHlZAXlHqtnQX0Y5r9JO1GzNuF6gw";
-        let id = "982923679229219"
-        let url='https://graph.facebook.com/'+id+'?fields=photos{picture,likes.summary(true),created_time}&access_token='+access_token; //resource URI with user ID and access token
+        let access_token = this.props.accessTkn;
+        console.log(access_token);
+        let id = "107798738333600";
+        let url='https://graph.facebook.com/'+id+'?fields=photos{picture,likes.summary(true),created_time}&access_token='+this.props.accessTkn; //resource URI with user ID and access token
         axios({
             method:'get',
             url:url
@@ -48,7 +49,7 @@ class Images extends React.Component {
             })
         })
         .catch(response=>{ /* error handling */
-            console.log(response);
+            console.log('error', response);
         }) 
     }
 
