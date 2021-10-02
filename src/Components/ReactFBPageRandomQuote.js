@@ -34,7 +34,6 @@ const ReactFBPageRandomQuote = (props) => {
         axios.get('https://graph.facebook.com/101585198967501?fields=access_token&access_token='+props.access_tkn)
             .then( response => {
                 let token = response.data.access_token;
-                console.log(response.data.access_token);
                 axios.post("https://graph.facebook.com/101585198967501/feed?", {
                     message: quote,
                     access_token: token
