@@ -3,7 +3,8 @@ import image from './Images.js';
 import axios from 'axios';
 import React, { Component } from 'react';
 import { getDefaultNormalizer } from '@testing-library/dom';
-import './Navbar.css'
+import './Navbar.css';
+import { Link } from 'react-router-dom'
 
 class Navbar extends Component {
     constructor(props) {
@@ -34,22 +35,17 @@ class Navbar extends Component {
                 <img src={logo1} alt='Logo' className='logo' /> 
                 <ul>
                     <li>
-                        <a href='/'>Photos</a>
+                        <Link to='/Images'>Photos</Link>
                     </li>
                 </ul>
                 <ul>
                     <li>
-                        <a href='/'>Post Quote</a>
+                        <Link to='/Quote'>Post Quote</Link>
                     </li>
                 </ul>
                 <ul>
                     <li>
-                        <a href='/'>Save to Drive</a>
-                    </li>
-                </ul>
-                <ul>
-                    <li>
-                        <a href='/'>Log Out</a>
+                        <Link to='/Photo'>Post Photo</Link>
                     </li>
                 </ul>
             </div>
