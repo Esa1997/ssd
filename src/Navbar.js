@@ -35,7 +35,7 @@ class Navbar extends Component {
                 <img src={logo1} alt='Logo' className='logo' /> 
                 <ul>
                     <li>
-                        <Link to='/Images'>Photos</Link>
+                        <Link to='/Images'>Most Liked Photos</Link>
                     </li>
                 </ul>
                 <ul>
