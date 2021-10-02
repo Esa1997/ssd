@@ -64,7 +64,7 @@ const ReactFBPageRandomQuote = () => {
 
     return (
 
-        <div className = 'RandomQuotes'>
+        <div className = 'photoTitle'>
 
             {quote}
 
@@ -73,7 +73,7 @@ const ReactFBPageRandomQuote = () => {
             <br/>
             <br />
             <div> 
-                <button className = "postbtn" onClick={() => postRandomQuote()}>Post Quote</button>
+                <button className = "photobtn" onClick={() => postRandomQuote()}>Post Quote</button>
             </div>
             
 
