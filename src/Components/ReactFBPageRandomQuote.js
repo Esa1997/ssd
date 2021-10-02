@@ -3,6 +3,8 @@ import React, { useState, useEffect } from "react";
 import { render } from "react-dom";
 
 import axios from "axios";
+import { CgAppleWatch } from "react-icons/cg";
+import  '../App.css'
 
 
 
@@ -34,7 +36,7 @@ const ReactFBPageRandomQuote = () => {
 
             message: quote,
 
-            access_token: "EAAMA46nKs3ABALBM52QFkg1tqaZBEaZCCbE8D8j0aghM5FNSYiinCvqwIj8i8vh90qit22r8x5dVLKWtFN4vmVZAoB0Y9y0ESLZC50EPZBzltffZAhc3e5pjhihOx1rrPpMM4UGT35g6F9EmPsFzRXPIpKPLSZArfL6qA2Qw7K2bGTlpKh2etU7pO4BXIrzsw6weCZBVGoCrr3806BqXpCV7"
+            access_token: "EAAMA46nKs3ABAMJJSY5wK0BavoAIvPyXuAZAspbLoICBX5BjCAhJUEqiPIzhlHmiQZCPwMdkyzEp1l2IgxyKclWL1Yecr3t6Q5dBkckuUSoGkRKzzxeaj5U1GFtHwdN3DjLDfTSVGXEPJPsXl5cZCm1kJ3y08V4gFoDma2r0YZCXXhKZBxrcbiWh2ZCtk3bEd7PP8lx8cOGhfuVDWSMQbi"
 
         }).then(
 
@@ -62,15 +64,18 @@ const ReactFBPageRandomQuote = () => {
 
     return (
 
-        <div>
+        <div className = 'RandomQuotes'>
 
             {quote}
 
             <br />
-
+            <br/>
+            <br/>
             <br />
-
-            <button onClick={() => postRandomQuote()}>Post Quote</button>
+            <div> 
+                <button className = "postbtn" onClick={() => postRandomQuote()}>Post Quote</button>
+            </div>
+            
 
         </div>
 
