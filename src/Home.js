@@ -8,8 +8,8 @@ import ReactFBPageRandomQuote from './Components/ReactFBPageRandomQuote';
 const Home = (props) => {
     return(
         <>
-            <Navbar/>
-            <ReactFBPageRandomQuote/>
+            <Navbar picture={JSON.stringify(props.picture)}/>
+            <Images accessTkn={props.access_tkn} id={props.id}/>
         </>
     )
 }

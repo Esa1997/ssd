@@ -9,7 +9,7 @@ function App() {
     <div >
 
       <div>
-        <h1>Facebook Collage Maker</h1> 
+        <h1>Random Creative Corner</h1> 
       </div>              
   
       <div className='fbBtn'>

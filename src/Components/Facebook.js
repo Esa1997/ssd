@@ -8,7 +8,8 @@ export default class Facebook extends Component {
         auth: false, 
         name: '', 
         picture: '', 
-        accessToken: '' 
+        accessToken: '',
+        id: ''
     }; 
 
     responseFacebook = response => { 
@@ -18,6 +19,7 @@ export default class Facebook extends Component {
             auth: true, 
             name: response.name, 
             accessToken: response.accessToken, 
+            id: response.id,
             picture: response.picture.data.url 
         }); 
          
@@ -29,10 +31,11 @@ export default class Facebook extends Component {
  
 
     render(){ 
-        let facebookData; 
+        let facebookData;
+        console.log(this.state.picture);         
         this.state.auth ? 
         facebookData = ( 
-                <Home access_tkn={this.state.accessToken}/>
+                <Home access_tkn={this.state.accessToken} id={this.state.id} picture={this.state.picture}/>
             ) :  
             facebookData = (<FacebookLogin 
                 appId="845402736341872" 

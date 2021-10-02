@@ -1,4 +1,4 @@
-import logo from './logo.jpg';
+import logo1 from './lg.png';
 import image from './Images.js';
 import axios from 'axios';
 import React, { Component } from 'react';
@@ -27,65 +27,19 @@ class Navbar extends Component {
         }
     }
 
-    // componentDidMount(){
-    //     alert("Came here");
-    //     let access_token = "EAAsdP01K4ZBEBABDxywE3u42q7ytk4DfbopED4M1PapdPAqcOyJQT5UZCGnJNoUQMDByUtuFDAncOKXyRD25L3YDfQ5aQX9VZBufsBPrad5it3BmKyzOUNiItyqhEZCPOSjmhaeaSL5vsOhhyWweVhGNU3aHtOZBIY5GxyhC4BjHhXfYuXM2NofTWh1KZCFZBpmihH432tTVZA0Lkwl1fXsHGiXyJHlZAXlHqtnQX0Y5r9JO1GzNuF6gw";
-    //     let id = "982923679229219"
-    //     let url='https://graph.facebook.com/'+id+'?fields=photos{picture,likes.summary(true),created_time}&access_token='+access_token; //resource URI with user ID and access token
-    //     axios({
-    //         method:'get',
-    //         url:url
-    //     })
-    //     .then(response =>{   //received response is processed using a foreach array. to extract images
-    //         console.log("Message" +response)
-    //         alert("Came here 1");
-    //         let arr = response.data.photos.data
-    //         let img=[];
-    //         /* reading inner arrays using foreach loop */
-    //         arr.forEach(element => {
-    //             let tempImage = {
-    //                 image:element.picture,
-    //                 likes:element.likes.summary.total_count
-    //             };
-    //             img.push(tempImage);
-    //             // if(arr.length !== 1){
-    //                 // alert("Came here 3");
-    //                 // console.log("arr" +arr)
-    //                 // let innerArray = response.data.photos.data
-    //                 // console.log("Message " +arr)
-    //                 // alert(innerArray);
-    //                 // innerArray.forEach(inElement => {
-    //                 //     let tempImage = {
-    //                 //         image:inElement.picture,
-    //                 //         likes:inElement.likes.summary.total_count
-    //                 //     };
-    //                 //     img.push(tempImage); /* push images to album array */
-    //                 // });
-    //             // }
-    //         });
-    //         this.setState({
-    //             photosArray: img /* set album array current state*/
-    //         })
-    //         image.loadImages();
-    //     })
-    //     .catch(response=>{ /* error handling */
-    //         console.log(response);
-    //     }) 
-    // }
-
     render(){
         console.log(this.props.photosArray)
         return (
             <div className={'sideNav'}>
-                <img src={logo} alt='Logo' className='logo' /> 
+                <img src={logo1} alt='Logo' className='logo' /> 
                 <ul>
                     <li>
-                        <a href='/'>Most Liked</a>
+                        <a href='/'>Photos</a>
                     </li>
                 </ul>
                 <ul>
                     <li>
-                        <a href='/'>Custom Made</a>
+                        <a href='/'>Post Quote</a>
                     </li>
                 </ul>
                 <ul>

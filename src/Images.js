@@ -25,10 +25,7 @@ class Images extends React.Component {
     }
 
     componentDidMount(){
-        let access_token = this.props.accessTkn;
-        console.log(access_token);
-        let id = "107798738333600";
-        let url='https://graph.facebook.com/'+id+'?fields=photos{picture,likes.summary(true),created_time}&access_token='+this.props.accessTkn; //resource URI with user ID and access token
+        let url='https://graph.facebook.com/'+this.props.id+'?fields=photos{picture,likes.summary(true),created_time}&access_token='+this.props.accessTkn; //resource URI with user ID and access token
         axios({
             method:'get',
             url:url
