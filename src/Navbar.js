@@ -28,6 +28,7 @@ class Navbar extends Component {
         }
     }
 
+    //Render Navigation Bar
     render(){
         console.log(this.props.photosArray)
         return (
