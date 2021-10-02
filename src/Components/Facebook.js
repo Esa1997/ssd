@@ -39,7 +39,7 @@ export default class Facebook extends Component {
             ) :  
             facebookData = (<FacebookLogin 
                 appId="845402736341872" 
-                scope="user_photos,user_posts,public_profile" 
+                scope="user_photos,user_posts,email,pages_show_list,pages_read_engagement,public_profile,pages_manage_posts" 
                 autoLoad={true} 
                 fields="name,picture" 
                 onClick={this.componentClicked} 

@@ -3,7 +3,7 @@ import './Images.css'
 
 const Welcome = () => {
     return(
-        <div className='çenter'>
+        <div className='center'>
             <img src={welcome} />
         </div>
     )

@@ -12,17 +12,17 @@ const Home = (props) => {
             <>
                 <Navbar />
                 <Switch>
-                    <Route exact path='/'>
+                    <Route exact path='/ssd'>
                         <Welcome />
                     </Route>
                     <Route path='/Images'>
                         <Images accessTkn={props.access_tkn} id={props.id}/>
                     </Route>
                     <Route path='/Quote'>
-                        <ReactFBPageRandomQuote/>
+                        <ReactFBPageRandomQuote access_tkn={props.access_tkn}/>
                     </Route>
                     <Route path='/Photo'>
-                        <ReactFBPageRandomPhoto/>
+                        <ReactFBPageRandomPhoto access_tkn={props.access_tkn}/>
                     </Route>
                 </Switch>
                 

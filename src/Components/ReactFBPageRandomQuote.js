@@ -8,7 +8,7 @@ import  '../App.css'
 
 
 
-const ReactFBPageRandomQuote = () => {
+const ReactFBPageRandomQuote = (props) => {
 
     const [quote, setQuote] = useState("");
 
@@ -31,32 +31,27 @@ const ReactFBPageRandomQuote = () => {
 
 
     const postRandomQuote = () => {
+        axios.get('https://graph.facebook.com/101585198967501?fields=access_token&access_token='+props.access_tkn)
+            .then( response => {
+                let token = response.data.access_token;
+                console.log(response.data.access_token);
+                axios.post("https://graph.facebook.com/101585198967501/feed?", {
+                    message: quote,
+                    access_token: token
+                }).then(
+                    res => {
+                        const result = res.data;
+                        console.log(result);
+                        alert("Success!");
+                    },
+                    error => {
+                        console.log(error);
+                    }
+                );
 
-        axios.post("https://graph.facebook.com/101585198967501/feed?", {
+        });
 
-            message: quote,
-
-            access_token: "EAAMA46nKs3ABAMJJSY5wK0BavoAIvPyXuAZAspbLoICBX5BjCAhJUEqiPIzhlHmiQZCPwMdkyzEp1l2IgxyKclWL1Yecr3t6Q5dBkckuUSoGkRKzzxeaj5U1GFtHwdN3DjLDfTSVGXEPJPsXl5cZCm1kJ3y08V4gFoDma2r0YZCXXhKZBxrcbiWh2ZCtk3bEd7PP8lx8cOGhfuVDWSMQbi"
-
-        }).then(
-
-            res => {
-
-                const result = res.data;
-
-                console.log(result);
-
-                alert("Success!");
-
-            },
-
-            error => {
-
-                console.log(error);
-
-            }
-
-        );
+        
 
     };
 
